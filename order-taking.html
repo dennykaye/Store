@@ -5,21 +5,89 @@
   </head>
 
   <body>
-    <form action="receipt.html">
-      <script>
-        document.write("<br><br><br><br><br><br><center><font face = 'Arial'>");
+    <center>
+      <h1>Order Entry Form</h1>
+      <form action="receipt.html">
+        <fieldset>
+          <legend>Customer Information</legend>
+          <p>
+            <label for="customerName">Customer Name:</label>
+            <input id="customerName" type="text" name="customerName" size="30"/>
+          </p>
+          <p>
+            <label for="address">Address:</label>
+            <input id="address" type="text" name="address" size="38"/>
+          </p>
+          <p>
+            <label for="contactNumber">Contact Number:</label>
+            <input id="contactNumber" type="text" name="contactNumber" size="29"/>
+          </p>
+        </fieldset>
 
-        document.write("<br>Order Entry Form");
-        getCustomerInfo();
-        document.write("<br><br>Please choose your order(s)");
-        addSpaces(48);
-        addMenu();
-        document.write("<br><br>Add-Ons");
-        addAddOns();
-        addSpaces(200);
-        document.write("<br> Are all entries correct? ");
-        addSubmitAndCancelButton();
-      </script>
-    </form>
+        <fieldset>
+          <legend>Plese choose your orders(s)</legend>
+
+          <!-- hamburger -->
+          <p>
+            <input type="checkbox" id="hamburger_ckbx" name="hamburger_ckbx" value="Hamburger" onClick=productClickedCheck(this,'hamburgerQuantity_slct')> Hamburger
+            Quantity <select id="hamburgerQuantity_slct" name="hamburgerQuantity_slct" disabled>
+              <script>option(10);</script>
+            </select> PHP 25.00
+          </p>
+
+          <!-- cheese burger -->
+          <p>
+            <input type="checkbox" id="cheeseburger_ckbx" name="cheeseburger_ckbx" value="Cheeseburger" onClick=productClickedCheck(this,'cheeseburgerQuantity_slct')> Cheeseburger
+            Quantity <select id="cheeseburgerQuantity_slct" name="cheeseburgerQuantity_slct" disabled>
+              <script>option(10);</script>
+            </select> PHP 33.00
+          </p>
+
+          <!-- spaghetti -->
+          <p>
+            <input type="checkbox" id="spaghetti_ckbx" name="spaghetti_ckbx" value="Spaghetti" onClick=productClickedCheck(this,'spaghettiQuantity_slct')> Spaghetti
+            Quantity <select id="spaghettiQuantity_slct" name="spaghettiQuantity_slct" disabled>
+              <script>option(10);</script>
+            </select> PHP 38.00
+          </p>
+
+          <!-- chicken -->
+          <p>
+            <input type="checkbox" id="chicken_ckbx" name="chicken_ckbx" value="Chicken with Rice" onClick=productClickedCheck(this,'chickenQuantity_slct')> Chicken with Rice
+            Quantity <select id="chickenQuantity_slct" name="chickenQuantity_slct" disabled>
+              <script>option(10);</script>
+            </select> PHP 50.00
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Add-ons</legend>
+
+          <!-- french fries -->
+          <p>
+            <input type="checkbox" id="fries_ckbx" name="fries_ckbx" value="French Fries" onClick=addOnsFlavorAndQuantityDisabledCheck(this,'cheeseFlavor_rbtn','barbecueFlavor_rbtn','friesQuantity_slct') disabled> French Fries
+            <input type="radio" id="cheeseFlavor_rbtn" name="friesFlavor_rbtn" value="Cheese" checked disabled> Cheese
+            <input type="radio" id="barbecueFlavor_rbtn" name="friesFlavor_rbtn" value="Barbecue" disabled> Barbecue
+            Quantity <select id="friesQuantity_slct" name="friesQuantity_slct" disabled>
+              <script>option(10);</script>
+            </select> PHP 25.00
+          </p>
+
+          <!-- sundae -->
+          <p>
+            <input type="checkbox" id="sundae_ckbx" name="sundae_ckbx" value="Sundae" onClick=addOnsFlavorAndQuantityDisabledCheck(this,'chocoFlavor_rbtn','vanillaFlavor_rbtn','sundaeQuantity_slct') disabled> Sundae
+            <input type="radio" id="chocoFlavor_rbtn" name="sundaeFlavor_rbtn" value="Choco" checked disabled> Choco
+            <input type="radio" id="vanillaFlavor_rbtn" name="sundaeFlavor_rbtn" value="Vanilla" disabled> Vanilla
+            Quantity <select id="sundaeQuantity_slct" name="sundaeQuantity_slct" disabled>
+              <script>option(10);</script>
+            </select> PHP 30.00
+          </p>
+        </fieldset>
+
+        <div>
+          <p>Are all entries correct?<input type="submit" id="submit_sbtn" value="SUBMIT" disabled><input type="button" value="CANCEL" onClick=history.go(0)><br><br></p>
+        </div>
+      </form>
+    </center>
   </body>
 </html>

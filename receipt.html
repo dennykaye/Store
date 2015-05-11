@@ -1,91 +1,91 @@
-
 <html>
-  <head>
-    <script type="text/javascript" src="receipt.js"></script>
-  </head>
-  <body>
-    <script>
-      /** If a specific value does not exist, the variable contains "null" */
-      var customerName = getValue("customerName");
-      var address = getValue("address");
-      var contactNumber = getValue("contactNumber");
-      var hamburger = getValue("hamburger_ckbx"); // if has value, hamburger = value, which is "Hamburger". if has no value, hamburger == null(Applies to all Variables except customer info) */
-      var hamburgerQuantity = parseInt(getValue("hamburgerQuantity_slct"));
-      var cheeseburger = getValue("cheeseburger_ckbx");
-      var cheeseburgerQuantity = parseInt(getValue("cheeseburgerQuantity_slct"));
-      var spaghetti = getValue("spaghetti_ckbx");
-      var spaghettiQuantity = parseInt(getValue("spaghettiQuantity_slct"));
-      var chicken = getValue("chicken_ckbx");
-      var chickenQuantity = parseInt(getValue("chickenQuantity_slct"));
-      var fries = getValue("fries_ckbx");
-      var friesFlavor = getValue("friesFlavor_rbtn");
-      var friesQuantity = parseInt(getValue("friesQuantity_slct"));
-      var sundae = getValue("sundae_ckbx");
-      var sundaeFlavor = getValue("sundaeFlavor_rbtn");
-      var sundaeQuantity = parseInt(getValue("sundaeQuantity_slct"));
+<head>
+  <script type="text/javascript" src="receipt.js"></script>
+</head>
+<body>
+  <script>
+    /** If a specific value does not exist, the variable contains "null" */
+    var customerName = getValue("customerName");
+    var address = getValue("address");
+    var contactNumber = getValue("contactNumber");
+    var hamburger = getValue("hamburger_ckbx"); // if has value, hamburger = value, which is "Hamburger". if has no value, hamburger == null(Applies to all Variables except customer info) */
+    var hamburgerQuantity = parseInt(getValue("hamburgerQuantity_slct"));
+    var cheeseburger = getValue("cheeseburger_ckbx");
+    var cheeseburgerQuantity = parseInt(getValue("cheeseburgerQuantity_slct"));
+    var spaghetti = getValue("spaghetti_ckbx");
+    var spaghettiQuantity = parseInt(getValue("spaghettiQuantity_slct"));
+    var chicken = getValue("chicken_ckbx");
+    var chickenQuantity = parseInt(getValue("chickenQuantity_slct"));
+    var fries = getValue("fries_ckbx");
+    var friesFlavor = getValue("friesFlavor_rbtn");
+    var friesQuantity = parseInt(getValue("friesQuantity_slct"));
+    var sundae = getValue("sundae_ckbx");
+    var sundaeFlavor = getValue("sundaeFlavor_rbtn");
+    var sundaeQuantity = parseInt(getValue("sundaeQuantity_slct"));
 
-      document.write("<br><br><br><br><center><font face = 'Arial'>")
+    document.write("<br><br><br><br><center><font face = 'Arial'>")
 
-      addSpaces(20);
-      document.write("<b>Customer Name: </b>" + customerName + "<br>");
-      addSpaces(20);
-      document.write("<b>Address: </b>" + address + "<br>");
-      addSpaces(20);
-      document.write("<b>Contact Number: </b>" + contactNumber + "<br><br>");
-      addSpaces(20);
-      document.write("<b>Summary of Orders: </b><br><br>");
-      addSpaces(20);
-      document.write("<b>Quantity</b>");
-      addSpaces(30);
-      document.write("<b>Product Description</b>");
-      addSpaces(30);
-      document.write("<b>Amount</b>");
-      addSpaces(30);
+    addSpaces(20);
+    document.write("<b>Customer Name: </b>" + customerName + "<br>");
+    addSpaces(20);
+    document.write("<b>Address: </b>" + address + "<br>");
+    addSpaces(20);
+    document.write("<b>Contact Number: </b>" + contactNumber + "<br><br>");
+    addSpaces(20);
+    document.write("<b>Summary of Orders: </b><br><br>");
+    addSpaces(20);
+    document.write("<b>Quantity</b>");
+    addSpaces(30);
+    document.write("<b>Product Description</b>");
+    addSpaces(30);
+    document.write("<b>Amount</b>");
+    addSpaces(30);
 
-      var totalPrice = 0; // price calculated from the addToReceiptCheck function is added to the total price.
+    var totalPrice = 0; // price calculated from the addToReceiptCheck function is added to the total price.
 
-      addToReceiptCheck(hamburger,hamburgerQuantity,25,49,47,37,36);
-      addToReceiptCheck(cheeseburger,cheeseburgerQuantity,33,46,45,36,34);
-      addToReceiptCheck(spaghetti,spaghettiQuantity,38,50,48,40,38);
-addToReceiptCheck(chicken,chickenQuantity,50,43,42,32,30)
+    addToReceiptCheck(hamburger,hamburgerQuantity,25,49,47,37,36);
+    addToReceiptCheck(cheeseburger,cheeseburgerQuantity,33,46,45,36,34);
+    addToReceiptCheck(spaghetti,spaghettiQuantity,38,50,48,40,38);
+    addToReceiptCheck(chicken,chickenQuantity,50,43,42,32,30);
 
-  document.write("<br><br>");
-  addSpaces(20);
-if((fries != null && friesQuantity != 0) || (sundae != null && sundaeQuantity != 0))
-  document.write("Add-Ons");
+    document.write("<br><br>");
+    addSpaces(20);
+    if((fries != null && friesQuantity != 0) || (sundae != null && sundaeQuantity != 0)) {
+      document.write("Add-Ons");
 
-  addToReceiptCheck(fries,friesQuantity,25,48,46,37,36,friesFlavor,81,79);
-  addToReceiptCheck(sundae,sundaeQuantity,30,52,51,42,40,sundaeFlavor,82,82);
+      addToReceiptCheck(fries,friesQuantity,25,48,46,37,36,friesFlavor,81,79);
+      addToReceiptCheck(sundae,sundaeQuantity,30,52,51,42,40,sundaeFlavor,82,82);
 
-  document.write("<br><br>");
-  addSpaces(69);
-  document.write("<b>Total Amount:</b>");
-  addDynamicSpacing(totalPrice,42,41,39); // Ignore
-  document.write("PhP " + totalPrice.toFixed(2) + "<br>");
+      document.write("<br><br>");
+      addSpaces(69);
+      document.write("<b>Total Amount:</b>");
+      addDynamicSpacing(totalPrice,42,41,39); // Ignore
+      document.write("PhP " + totalPrice.toFixed(2) + "<br>");
 
-  var vat = 0.12 * totalPrice;
+      var vat = 0.12 * totalPrice;
 
-  addSpaces(69);
-  document.write("12% VAT");
-addDynamicSpacing(vat,55,53,52)
-  document.write("PhP " + vat.toFixed(2) + "<br>");
+      addSpaces(69);
+      document.write("12% VAT");
+      addDynamicSpacing(vat,55,53,52);
+      document.write("PhP " + vat.toFixed(2) + "<br>");
 
-  var serviceCharge = 0.10 * totalPrice;
+      var serviceCharge = 0.10 * totalPrice;
 
-  addSpaces(69);
-  document.write("10% Service Charge");
-  addDynamicSpacing(serviceCharge,33,31,30);
-  document.write("PhP " + serviceCharge.toFixed(2) + "<br>");
+      addSpaces(69);
+      document.write("10% Service Charge");
+      addDynamicSpacing(serviceCharge,33,31,30);
+      document.write("PhP " + serviceCharge.toFixed(2) + "<br>");
 
-  var totalPriceDue = totalPrice + vat + serviceCharge;
+      var totalPriceDue = totalPrice + vat + serviceCharge;
 
-  addSpaces(135);
-  document.write("___________<br>");
+      addSpaces(135);
+      document.write("___________<br>");
 
-  addSpaces(69);
-  document.write("<b>Total Amount Due:</b>");
-  addDynamicSpacing(totalPriceDue,33,31,29);
-  document.write("PhP " + totalPriceDue.toFixed(2) + "<br><br>");
-    </script>
-  </body>
+      addSpaces(69);
+      document.write("<b>Total Amount Due:</b>");
+      addDynamicSpacing(totalPriceDue,33,31,29);
+      document.write("PhP " + totalPriceDue.toFixed(2) + "<br><br>");
+    }
+  </script>
+</body>
 </html>

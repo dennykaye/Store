@@ -62,15 +62,6 @@ function addOnsFlavorAndQuantityDisabledCheck(addOns_ckbx, flavor1_rbtn, flavor2
   }
 }
 
-function getCustomerInfo() {
-  document.write("<br> Customer Name:");
-  document.write("<input type = 'text' name = 'customerName' size = '30'>");
-  document.write("<br> Address: ");
-  document.write("<input type = 'text' name = 'address' size = '38'>");
-  document.write("<br> Contact Number: ");
-  document.write("<input type = 'text' name = 'contactNumber' size = '29'>");
-}
-
 function addMenu() {
   document.write("<br><input type = 'checkbox' id = 'hamburger_ckbx' name = 'hamburger_ckbx' value = 'Hamburger' onClick = productClickedCheck(this,'hamburgerQuantity_slct')> Hamburger");
   addSpaces(20);

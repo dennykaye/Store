@@ -5,21 +5,33 @@
   </head>
 
   <body>
-    <form action="receipt.html">
-      <script>
-        document.write("<br><br><br><br><br><br><center><font face = 'Arial'>");
+    <center>
+      <h1>Order Entry Form</h1>
+      <form action="receipt.html">
+        <p>
+          <label for="customerName">Customer Name:</label>
+          <input id="customerName" type="text" name="customerName" size="30"/>
+        </p>
+        <p>
+          <label for="address">Address:</label>
+          <input id="address" type="text" name="address" size="38"/>
+        </p>
+        <p>
+          <label for="contactNumber">Contact Number:</label>
+          <input id="contactNumber" type="text" name="contactNumber" size="29"/>
+        </p>
 
-        document.write("<br>Order Entry Form");
-        getCustomerInfo();
-        document.write("<br><br>Please choose your order(s)");
-        addSpaces(48);
-        addMenu();
-        document.write("<br><br>Add-Ons");
-        addAddOns();
-        addSpaces(200);
-        document.write("<br> Are all entries correct? ");
-        addSubmitAndCancelButton();
-      </script>
-    </form>
+        <script>
+          document.write("<br><br>Please choose your order(s)");
+          addSpaces(48);
+          addMenu();
+          document.write("<br><br>Add-Ons");
+          addAddOns();
+          addSpaces(200);
+          document.write("<br> Are all entries correct? ");
+          addSubmitAndCancelButton();
+        </script>
+      </form>
+    </center>
   </body>
 </html>

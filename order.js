@@ -61,29 +61,3 @@ function addOnsFlavorAndQuantityDisabledCheck(addOns_ckbx, flavor1_rbtn, flavor2
     quantity_slct.disabled = true;
   }
 }
-
-function addAddOns() {
-  document.write("<br><input type = 'checkbox' id = 'fries_ckbx' name = 'fries_ckbx' value = 'French Fries' onClick = addOnsFlavorAndQuantityDisabledCheck(this,'cheeseFlavor_rbtn','barbecueFlavor_rbtn','friesQuantity_slct') disabled> French Fries");
-  addSpaces(5);
-  document.write("<input type = 'radio' id = 'cheeseFlavor_rbtn' name = 'friesFlavor_rbtn' value = 'Cheese' checked disabled> Cheese ");
-  document.write("<input type = 'radio' id = 'barbecueFlavor_rbtn' name = 'friesFlavor_rbtn' value = 'Barbecue' disabled> Barbecue");
-  addSpaces(14);
-  document.write("Quantity <select id = 'friesQuantity_slct' name = 'friesQuantity_slct' disabled>");
-  option(10);
-  document.write("</select> PhP 25.00");
-
-  document.write("<br><input type = 'checkbox' id = 'sundae_ckbx' name = 'sundae_ckbx' value = 'Sundae' onClick = addOnsFlavorAndQuantityDisabledCheck(this,'chocoFlavor_rbtn','vanillaFlavor_rbtn','sundaeQuantity_slct') disabled> Sundae");
-  addSpaces(15);
-  document.write("<input type = 'radio' id = 'chocoFlavor_rbtn' name = 'sundaeFlavor_rbtn' value = 'Choco' checked disabled> Choco ");
-  addSpaces(2);
-  document.write("<input type = 'radio' id = 'vanillaFlavor_rbtn' name = 'sundaeFlavor_rbtn' value = 'Vanilla' disabled> Vanilla");
-  addSpaces(20);
-  document.write("Quantity <select id = 'sundaeQuantity_slct' name = 'sundaeQuantity_slct' disabled>");
-  option(10);
-  document.write("</select> PhP 30.00<br>");
-}
-
-function addSubmitAndCancelButton() {
-  document.write("<input type = 'submit' id = 'submit_sbtn' value = 'SUBMIT' disabled>");
-  document.write("<input type = 'button' value = 'CANCEL' onClick = history.go(0)><br><br>");
-}

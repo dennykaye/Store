@@ -49,13 +49,29 @@
           </select> PHP 50.00
         </fieldset>
 
-        <script>
-          document.write("<br><br>Add-Ons");
-          addAddOns();
-          addSpaces(200);
-          document.write("<br> Are all entries correct? ");
-          addSubmitAndCancelButton();
-        </script>
+        <fieldset>
+          <legend>Add-ons</legend>
+
+          <!-- french fries -->
+          <br><input type = 'checkbox' id = 'fries_ckbx' name = 'fries_ckbx' value = 'French Fries' onClick = addOnsFlavorAndQuantityDisabledCheck(this,'cheeseFlavor_rbtn','barbecueFlavor_rbtn','friesQuantity_slct') disabled> French Fries
+          <input type = 'radio' id = 'cheeseFlavor_rbtn' name = 'friesFlavor_rbtn' value = 'Cheese' checked disabled> Cheese
+          <input type = 'radio' id = 'barbecueFlavor_rbtn' name = 'friesFlavor_rbtn' value = 'Barbecue' disabled> Barbecue
+          Quantity <select id = 'friesQuantity_slct' name = 'friesQuantity_slct' disabled>
+          <script>option(10);</script>
+          </select> PHP 25.00
+
+          <!-- sundae -->
+          <br><input type = 'checkbox' id = 'sundae_ckbx' name = 'sundae_ckbx' value = 'Sundae' onClick = addOnsFlavorAndQuantityDisabledCheck(this,'chocoFlavor_rbtn','vanillaFlavor_rbtn','sundaeQuantity_slct') disabled> Sundae
+          <input type = 'radio' id = 'chocoFlavor_rbtn' name = 'sundaeFlavor_rbtn' value = 'Choco' checked disabled> Choco
+          <input type = 'radio' id = 'vanillaFlavor_rbtn' name = 'sundaeFlavor_rbtn' value = 'Vanilla' disabled> Vanilla
+          Quantity <select id = 'sundaeQuantity_slct' name = 'sundaeQuantity_slct' disabled>
+          <script>option(10);</script>
+          </select> PHP 30.00
+        </fieldset>
+
+        <div>
+          <p>Are all entries correct?<input type = 'submit' id = 'submit_sbtn' value = 'SUBMIT' disabled><input type = 'button' value = 'CANCEL' onClick = history.go(0)><br><br></p>
+        </div>
       </form>
     </center>
   </body>

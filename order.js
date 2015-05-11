@@ -62,32 +62,6 @@ function addOnsFlavorAndQuantityDisabledCheck(addOns_ckbx, flavor1_rbtn, flavor2
   }
 }
 
-function addMenu() {
-  document.write("<br><input type = 'checkbox' id = 'hamburger_ckbx' name = 'hamburger_ckbx' value = 'Hamburger' onClick = productClickedCheck(this,'hamburgerQuantity_slct')> Hamburger");
-  addSpaces(20);
-  document.write("Quantity <select id = 'hamburgerQuantity_slct' name = 'hamburgerQuantity_slct' disabled>");
-  option(10);
-  document.write("</select> PhP 25.00");
-
-  document.write("<br><input type = 'checkbox' id = 'cheeseburger_ckbx' name = 'cheeseburger_ckbx' value = 'Cheeseburger' onClick = productClickedCheck(this,'cheeseburgerQuantity_slct')> Cheeseburger");
-  addSpaces(15);
-  document.write("Quantity <select id = 'cheeseburgerQuantity_slct' name = 'cheeseburgerQuantity_slct' disabled>");
-  option(10);
-  document.write("</select> PhP 33.00");
-
-  document.write("<br><input type = 'checkbox' id = 'spaghetti_ckbx' name = 'spaghetti_ckbx' value = 'Spaghetti' onClick = productClickedCheck(this,'spaghettiQuantity_slct')> Spaghetti");
-  addSpaces(24);
-  document.write("Quantity <select id = 'spaghettiQuantity_slct' name = 'spaghettiQuantity_slct' disabled>");
-  option(10);
-  document.write("</select> PhP 38.00");
-
-  document.write("<br><input type = 'checkbox' id = 'chicken_ckbx' name = 'chicken_ckbx' value = 'Chicken with Rice' onClick = productClickedCheck(this,'chickenQuantity_slct')> Chicken with Rice");
-  addSpaces(7);
-  document.write("Quantity <select id = 'chickenQuantity_slct' name = 'chickenQuantity_slct' disabled>");
-  option(10);
-  document.write("</select> PhP 50.00");
-}
-
 function addAddOns() {
   document.write("<br><input type = 'checkbox' id = 'fries_ckbx' name = 'fries_ckbx' value = 'French Fries' onClick = addOnsFlavorAndQuantityDisabledCheck(this,'cheeseFlavor_rbtn','barbecueFlavor_rbtn','friesQuantity_slct') disabled> French Fries");
   addSpaces(5);

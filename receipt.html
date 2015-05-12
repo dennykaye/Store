@@ -5,11 +5,7 @@
 <body>
   <script>
     /** If a specific value does not exist, the variable contains "null" */
-    var customer = {
-      name: getValue("customerName"),
-      address: getValue("address"),
-      contactNumber: getValue("contactNumber")
-    }
+    var customer = getCustomer();
 
     var hamburger = getValue("hamburger_ckbx"); // if has value, hamburger = value, which is "Hamburger". if has no value, hamburger == null(Applies to all Variables except customer info) */
     var hamburgerQuantity = parseInt(getValue("hamburgerQuantity_slct"));

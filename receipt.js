@@ -1,3 +1,11 @@
+function getCustomer() {
+  return {
+    name: getValue("customerName"),
+    address: getValue("address"),
+    contactNumber: getValue("contactNumber")
+  };
+}
+
 // Pang pantay
 function addSpaces(amount) {
   for(var i = 0; i < amount; i++)

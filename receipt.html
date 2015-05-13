@@ -61,13 +61,12 @@
     <script type="text/javascript">
       var customer = new Ractive({
         el: "#customer",
-        template: "#customerTmpl",
-        data: {
-          "customerName": "Tristan Peralta",
-          "address": "102 Rochas",
-          "contactNumber": "0291231232"
-        }
+        template: "#customerTmpl"
       });
+
+      customer.set("customerName", (getValue("customerName") || "").toString());
+      customer.set("address", (getValue("address") || "").toString());
+      customer.set("contactNumber", (getValue("contactNumber") || "").toString());
 
       var orderItems = new Ractive({
         el: "#orderItems",

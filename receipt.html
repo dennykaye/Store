@@ -29,7 +29,7 @@
         <tr>
           <td>{{ quantity }}</td>
           <td>{{ description }}</td>
-          <td style="text-align: right;">{{ amount }}</td>
+          <td style="text-align: right;">{{ format(amount) }}</td>
         </tr>
         {{/each}}
       </table>
@@ -39,19 +39,19 @@
       <table border="0">
         <tr>
           <td>Total Amount</td>
-          <td style="text-align: right;">{{ totalAmount }}</td>
+          <td style="text-align: right;">{{ format(totalAmount) }}</td>
         </tr>
         <tr>
           <td>12% VAT</td>
-          <td style="text-align: right;">{{ vat }}</td>
+          <td style="text-align: right;">{{ format(vat) }}</td>
         </tr>
         <tr>
           <td>10% Service charge</td>
-          <td style="text-align: right;">{{ serviceCharge }}</td>
+          <td style="text-align: right;">{{ format(serviceCharge) }}</td>
         </tr>
         <tr style="font-weight: bold;">
           <td>Total Amount Due</td>
-          <td style="text-align: right;">{{ totalAmountDue }}</td>
+          <td style="text-align: right;">{{ format(totalAmountDue) }}</td>
         </tr>
       </table>
     </script>
@@ -72,21 +72,30 @@
       var orderItems = new Ractive({
         el: "#orderItems",
         template: "#orderItemsTmpl",
-        data: { items: [
-          { "quantity": 10, "description": "Hamburger", "amount": "PHP10.00" },
-          { "quantity": 2, "description": "Cheeseburger", "amount": "PHP12.00" },
-          { "quantity": 3, "description": "Spaghetti", "amount": "PHP20.00" },
-        ]},
+        data: {
+          items: [
+            { "quantity": 10, "description": "Hamburger", "amount": 10.00 },
+            { "quantity": 2, "description": "Cheeseburger", "amount": 12.00 },
+            { "quantity": 3, "description": "Spaghetti", "amount": 20.00 },
+          ],
+          format: function(num) {
+            return "PHP"+num.toFixed(2);
+          }
+        },
       });
 
       var orderSummary = new Ractive({
         el: "#orderSummary",
         template: "#orderSummaryTmpl",
         data: {
-          "totalAmount": "PHP30.00",
-          "var": "PHP30.00",
-          "serviceCharge": "PHP10.00",
-          "totalAmountDue": "PHP100.00"
+          "totalAmount": 30.00,
+          "vat": 1.05,
+          "serviceCharge": 10.00,
+          "totalAmountDue": 50.00,
+          format: function(num) {
+            // duplicate code from orderItems :(
+            return "PHP"+num.toFixed(2);
+          }
         }
       });
     </script>

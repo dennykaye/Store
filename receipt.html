@@ -8,8 +8,7 @@
 
   <body>
     <div id="customer"></div>
-    <div id="orderItems"></div>
-    <div id="orderSummary"></div>
+    <div id="order"></div>
 
     <!-- Mustache templates -->
     <script id="customerTmpl" type="text/ractive">
@@ -18,7 +17,7 @@
       <p>Contact Number: {{ contactNumber }}</p>
     </script>
 
-    <script id="orderItemsTmpl" type="text/ractive">
+    <script id="orderTmpl" type="text/ractive">
       <table border="1" style="width: 50%">
         <caption>Summary of Orders</caption>
         <tr>
@@ -65,9 +64,9 @@
       customer.set("address", (getValue("address") || "").toString());
       customer.set("contactNumber", (getValue("contactNumber") || "").toString());
 
-      var orderItems = new Ractive({
-        el: "#orderItems",
-        template: "#orderItemsTmpl",
+      var orderView = new Ractive({
+        el: "#order",
+        template: "#orderTmpl",
         data: {
           items: [
             { quantity: 10, description: "Hamburger", amount: 10.00 },

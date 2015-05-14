@@ -74,14 +74,25 @@
             { quantity: 2, description: "Cheeseburger", amount: 12.00 },
             { quantity: 3, description: "Spaghetti", amount: 20.00 },
           ],
-          totalAmount: 30.00,
-          vat: 1.05,
-          serviceCharge: 10.00,
-          totalAmountDue: 50.00,
           format: function(num) {
             return "PHP"+num.toFixed(2);
           }
         },
+        computed: {
+          totalAmount: function() {
+            var items = this.get("items");
+            return items.reduce(function(sum, y) {
+              return sum + y.amount;
+            }, 0);
+          },
+          vat: function() {
+            return this.get('totalAmount') * 0.12;
+          },
+          serviceCharge: function() { return 10.00; },
+          totalAmountDue: function() {
+            return this.get('totalAmount') + this.get('vat') + this.get('serviceCharge');
+          },
+        }
       });
     </script>
   </body>
